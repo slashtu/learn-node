@@ -1,2 +1,6 @@
-# learn-node
-讀書筆記  [深入淺出Node.js](http://www.books.com.tw/products/0010644512)
+將 fs.readFile 封裝成 Promise
+
+```
+node main.js
+```
+
