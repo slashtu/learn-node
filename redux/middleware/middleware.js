@@ -3,9 +3,7 @@ var store = {
   dispatch: function( action ){
     console.log('dispatch an action ' + action)
   }
-
 }
-
 
 var logger = function logger(store) {
   return function wrapDispatchToAddLogging(next) {
@@ -33,11 +31,11 @@ function applyMiddleware(store, middlewares) {
   middlewares.reverse()
 
   var dispatch = store.dispatch
-  middlewares.forEach(middleware =>{
-      dispatch = middleware(store)(dispatch)
-      console.log(dispatch)
-    }
-  )
+
+  middlewares.forEach( function( middleware){
+    dispatch = middleware(store)(dispatch)
+    console.log(dispatch)
+  })
 
   return Object.assign({}, store, { dispatch })
 }
